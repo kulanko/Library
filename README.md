@@ -41,5 +41,12 @@ Encapsulation: The attributes of each class (like title, author, and books) are 
 Inheritance: The Type class inherits from the Book class, allowing it to reuse the attributes and methods from Book.
 Polymorphism: The identify_book_type method in Type is an example where the behavior differs based on the type of book (eBook or audiobook).
 
-
+MEMBERS ROLES
+ ELSIE CHERUIYOT:  Introduction and Sammary at the end
+ BONIFACE KULANKO: Inheritance
+ INNOCENT ALVIN:   Encapsulation
+ JEFF GITUKU:  
+ ALEX GITONGA: 
+ 
+ 
 
