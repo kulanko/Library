@@ -1,10 +1,10 @@
 GROUP MEMBERS
 
-ELSIE CHERUIYOT
-ALEX GITONGA
-INNOCENT
-BONIFACE KULANKO
-JEFFREY GITUKU
+ELSIE CHERUIYOT,
+ALEX GITONGA,
+INNOCENT,
+BONIFACE KULANKO,
+JEFFREY GITUKU.
 
 
 This project is a Library Management System created using Python’s Object-Oriented Programming (OOP) concepts. It allows users to manage a collection of books, add new books, search for books by title or author, and remove books. There’s also functionality to handle different book types like eBooks and audiobooks.
