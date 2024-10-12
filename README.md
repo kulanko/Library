@@ -4,7 +4,7 @@ ELSIE CHERUIYOT,
 
 ALEX GITONGA,
 
-INNOCENT,
+INNOCENT ALVIN,
 
 BONIFACE KULANKO,
 
@@ -58,7 +58,7 @@ Polymorphism: The identify_book_type method in Type is an example where the beha
 
 MEMBERS ROLES.
 
- ELSIE CHERUIYOT:  Introduction and Sammary at the end.
+ ELSIE CHERUIYOT:  Will be doing the Introduction and Sammary at the end.
  
  BONIFACE KULANKO: Will be doing Inheritance. He created the repository, added members, connected it to pycharm and did the REDME.
  
