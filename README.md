@@ -56,16 +56,17 @@ Inheritance: The Type class inherits from the Book class, allowing it to reuse t
 
 Polymorphism: The identify_book_type method in Type is an example where the behavior differs based on the type of book (eBook or audiobook).
 
-MEMBERS ROLES
+MEMBERS ROLES.
+
  ELSIE CHERUIYOT:  Introduction and Sammary at the end.
  
- BONIFACE KULANKO: Inheritance.
+ BONIFACE KULANKO: Will be doing Inheritance. He created the repository, added members, connected it to pycharm and did the REDME.
  
- INNOCENT ALVIN:   Encapsulation.
+ INNOCENT ALVIN:   Innocent will do Encapsulation.
  
- JEFF GITUKU:  
+ JEFF GITUKU:  He will be taking it through Polymorphism. He also took the lead on creating the PowerPoint presentations 
  
- ALEX GITONGA: 
+ ALEX GITONGA: Alex will be doing Abstraction. 
  
  
 
