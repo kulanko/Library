@@ -1,7 +1,7 @@
 class Book:
     def __init__(self, title, author):  # Correct constructor
-        self.__title = title.strip()  # Strip any extra whitespace
-        self.__author = author.strip()  # Strip any extra whitespace
+        self.__title = title  # Strip any extra whitespace
+        self.__author = author  # Strip any extra whitespace
 
     # Getter for title
     def get_title(self):
