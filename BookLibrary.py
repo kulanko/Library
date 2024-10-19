@@ -33,48 +33,96 @@ class EBook(Book):
 
 # Library class to manage books
 class Library:
-    def __init__(self):  # Constructor to initialize the library's book list
-        self.__books = []  # Private attribute to hold books
+    def _init_(self):
 
-    # Method to add a book to the library
-    def add_book(self, book):
-        if isinstance(book, Book):  # Ensuring only Book instances are added
-            self.__books.append(book)
-            # Implicitly calling the __str__ method of book here using print()
-            print(f"Book added to the library: {book}")  # Implicit __str__()
+        self.library_data = {}
+
+    def add_author(self, author):
+        if author not in self.library_data:
+            self.library_data[author] = []
+            print(f"Author '{author}' added.")
         else:
-            print("Only instances of Book or EBook can be added.")
+            print(f"Author '{author}' already exists.")
 
-    # Method to remove a book by title
-    def remove_book(self, title):
-        for book in self.__books:
-            if book.get_title().strip().lower() == title.strip().lower():
-                self.__books.remove(book)
-                print(f"Book '{title}' removed from the library.")
-                return
-        print(f"Book '{title}' not found in the library.")
+    # Method to add a book to an existing author
+    def add_book(self, author, book):
+        if author in self.library_data:
+            self.library_data[author].append(book)
+            print(f"Added '{book}' by {author}.")
+        else:
+            print(f"Author '{author}' does not exist. Please add the author first.")
 
-    # Method to search for a book by title
-    def search_by_title(self, title):
-        for book in self.__books:
-            if book.get_title().strip().lower() == title.strip().lower():
-                # Implicitly calling the __str__ method when printing
-                print(f"Found: {book}")  # Implicit __str__()
-                return
-        print(f"No book with title '{title}' found.")
+    # Method to remove a book from the library
+    def remove_book(self, author, book):
+        if author in self.library_data and book in self.library_data[author]:
+            self.library_data[author].remove(book)
+            print(f"Removed '{book}' by {author}.")
 
-    # Method to search for books by author
+        elif book not in self.library_data[author]:
+            print(f"Could not find '{book}' by {author} to remove.")
+
+    def search_by_title(self, book):
+        found = False
+        for author, books in self.library_data.items():
+            if book in books:
+                print(f"Book found: '{book}' by {author}")
+                found = True
+                break
+        if not found:
+            print(f"Book titled '{book}' not found.")
+
+    # Method to search for a book by author
     def search_by_author(self, author):
-        found_books = [book for book in self.__books if book.get_author().strip().lower() == author.strip().lower()]
-        if found_books:
-            print(f"Books by {author}:")
-            for book in found_books:
-                # Implicitly calling the __str__ method when printing each book
-                print(f"- {book}")  # Implicit __str__()
+        if author in self.library_data:
+            books = self.library_data[author]
+            print(f"Books by {author}: ", books)
         else:
-            print(f"No books by {author} found.")
+            print(f"Author '{author}' does not exist. Please add the author first.")
 
 
+def display_menu():
+    print("\nWelcome to the Library!!!")
+    print("1. Search by book title")
+    print("2. Search by author")
+    print("3. Add an author")
+    print("4. Add a book to an author")
+    print("5. Remove a book")
+    print("6. Quit")
+
+
+def run_library_menu():
+    library = Library()  # Create an instance of the Library class
+    menu_options = ('1', '2', '3', '4', '5', '6')
+
+    while True:
+        display_menu()
+        option = input("Enter option: ")
+        if option in menu_options:
+            if option == '1':
+                title = input("Enter the book title to search: ")
+                library.search_by_title(title)
+            elif option == '2':
+                author = input("Enter the author's name to search: ")
+                library.search_by_author(author)
+            elif option == '3':
+                author = input("Enter the author's name to add: ")
+                library.add_author(author)
+            elif option == '4':
+                author = input("Enter the author's name: ")
+                book = input("Enter the book title: ")
+                library.add_book(author, book)
+            elif option == '5':
+                author = input("Enter the author's name: ")
+                book = input("Enter the book title to remove: ")
+                library.remove_book(author, book)
+            elif option == '6':
+                print("Exiting the library system.")
+                break  # Exit the menu loop
+            else:
+                print("Invalid input. Please try again.")
+
+
+run_library_menu()
 # Example usage of the classes
 library = Library()
 
